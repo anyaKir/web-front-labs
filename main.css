@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(191, 190, 246);
+    color: rgb(90, 6, 108);
+    font-family: Arial;
+    margin: 0px;
+}
+main {
+    background-color: rgb(179, 203, 226);
+    color: rgb(94, 32, 16);
+    font-family: Arial;
+    margin: 0px;
+}
+footer {
+    background-color: rgb(209, 178, 216);
+    color: rgb(46, 7, 78);
+    font-family: Arial;
+    margin: 0px;
+}
+header {
+    background-color: rgb(176, 132, 164);
+    color: rgb(90, 6, 108);
+    font-family: Arial;
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+  }
