@@ -42,3 +42,13 @@ a:active {
     color: rgb(37, 167, 203);
     opacity: 0.9;
   }
+div.menu {
+    border: 7px solid rgb(189, 117, 189);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+  }
+div.menu:hover {
+    background-color: rgba(137, 43, 226, 0.301);
+    box-shadow: 0 0 15px rgb(189, 117, 189)
+  }
