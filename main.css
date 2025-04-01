@@ -29,6 +29,7 @@ header {
 a {
     text-decoration: none;
     transition: 1s 2s;
+    color: blueviolet;
   }
 a:link {
     color: rgb(108, 11, 183);
@@ -37,10 +38,10 @@ a:visited {
     color: rgb(255, 230, 0);
 }
 a:hover {
-    color: rgb(204, 0, 255);
+    color: rgb(255, 0, 212);
     text-decoration: underline;
     text-shadow: 2px 2px 5px rgba(0, 100, 200, 0.3);
-    transition: 0.5;
+    transition: 0.5s;
   }
 a:active {
     color: rgb(37, 167, 203);
