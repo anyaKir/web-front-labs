@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(191, 190, 246);
+    color: rgb(90, 6, 108);
+    font-family: Arial;
+    margin: 0px;
+}
+main {
+    background-color: rgb(191, 190, 246);
+    color: rgb(94, 32, 16);
+    font-family: Arial;
+    margin: 10px 20px 45px;
+}
+footer {
+    background-color: rgb(209, 178, 216);
+    color: rgb(46, 7, 78);
+    font-family: Arial;
+    margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+header {
+    background-color: rgb(176, 132, 164);
+    color: rgb(90, 6, 108);
+    font-family: Arial;
+    margin: 0px;
+}
+a {
+    text-decoration: none;
+    transition: 1s 2s;
+    color: blueviolet;
+  }
+a:link {
+    color: rgb(108, 11, 183);
+}
+a:visited {
+    color: rgb(255, 230, 0);
+}
+a:hover {
+    color: rgb(255, 0, 212);
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px rgba(0, 100, 200, 0.3);
+    transition: 0.5s;
+  }
+a:active {
+    color: rgb(37, 167, 203);
+    opacity: 0.9;
+  }
+div.menu {
+    border: 7px solid rgb(189, 117, 189);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+  }
+div.menu:hover {
+    background-color: rgba(137, 43, 226, 0.301);
+    box-shadow: 0 0 15px rgb(189, 117, 189)
+  }

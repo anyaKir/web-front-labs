@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 3</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        .citation {
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to right, rgb(234, 170, 170), rgb(247, 219, 167), rgb(255, 255, 156), rgb(194, 248, 194), rgb(178, 178, 234), rgb(121, 121, 207), rgb(161, 67, 223) );
+        }
+        .citation1{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(230, 180, 230), rgb(222, 202, 246), rgb(149, 212, 216))
+        }
+        .citation2{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(59, 91, 187), rgb(222, 202, 246), rgb(216, 215, 149))
+        }
+        .citation3{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(183, 222, 224), rgb(116, 46, 202), rgb(207, 180, 223))
+        }
+        .citation4{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(123, 81, 123), rgb(139, 104, 182), rgb(104, 171, 187))
+        }
+        .citation5{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(227, 230, 192), rgb(164, 110, 231), rgb(163, 132, 230))
+        }
+        .citation6{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(185, 230, 180), rgb(152, 126, 186), rgb(237, 189, 200))
+        }
+        .citation7{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(237, 243, 171), rgb(174, 241, 239), rgb(184, 125, 184))
+        }
+        .citation8{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(197, 235, 235), rgb(143, 206, 219), rgb(82, 219, 228))
+        }
+        .citation9{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(118, 18, 118), rgb(190, 155, 232), rgb(250, 250, 112))
+        }
+        .citation10{
+            border: 1px solid rgb(195, 0, 255);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgb(99, 47, 167);
+            background: white;
+            background: linear-gradient(to left, rgb(149, 139, 235), rgb(208, 178, 246), rgb(123, 65, 173))
+        }
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .text1 {
+            font-size: 35px;
+            font-weight: initial;
+            text-align: right;
+            font-family: fantasy;
+        }
+        .text2 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: justify;
+            font-family: 'Franklin Gothic Medium';
+        }
+        .text3 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .text4 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-family:serif;
+        }
+        .text5 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-family:'Times New Roman';
+        }
+        .text6 {
+            font-size: 35px;
+            font-weight: bold;
+            text-align: right;
+            font-family:Verdana, Geneva;
+        }
+        .text7 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
+            font-family: 'Franklin Gothic Medium';
+        }
+        .text8 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: justify;
+            font-family: unset;
+        }
+        .text9 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: left;
+            font-family:'Trebuchet MS';
+        }
+        .text10 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-family: system-ui;
+        }
+        .author {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+        .author1 {
+            text-align: center;
+            font-size: 20px;
+            opacity: 0.9;
+            margin-top: 20px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author2 {
+            text-align: right;
+            font-size: 30px;
+            opacity: 0.9;
+            margin-top: 15px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author3 {
+            text-align: center;
+            font-size: 40px;
+            opacity: 0.6;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author4 {
+            text-align: left;
+            font-size: 50px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author5 {
+            text-align: right;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author6 {
+            text-align: justify;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author7 {
+            text-align: right;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author8 {
+            text-align: center;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author9 {
+            text-align: justify;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-right: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .author10 {
+            text-align: center;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-right: 50%;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+        <hr>
+    </header>
+    <main>
+        <div class="citation">
+            <div class="text">
+                Стремитесь не к успеху, а к ценностям, которые он дает.
+            </div>
+            <div class="author">
+                Альберт Энштейн
+            </div>
+        </div>
+        <div class="citation1">
+            <div class="text1">
+                Надо любить жизнь больше, чем смысл жизни.
+            </div>
+            <div class="author1">
+                Федор Достоевский
+            </div>
+        </div>
+        <div class="citation2">
+            <div class="text2">
+                Жизнь - это то, что с тобой происходит, пока ты строишь планы.
+            </div>
+            <div class="author2">
+                Джон Леннон
+            </div>
+        </div>
+        <div class="citation3">
+            <div class="text3">
+                Неосмысленная жизнь не стоит того, чтобы жить.
+            </div>
+            <div class="author3">
+                Сократ
+            </div>
+        </div>
+        <div class="citation4">
+            <div class="text4">
+                Ваше время ограничено, не тратьте его, живя чужой жизнью.
+            </div>
+            <div class="author4">
+                Стив Джобс
+            </div>
+        </div>
+        <div class="citation5">
+            <div class="text5">
+                Наука — это организованные знания, мудрость — это организованная жизнь.
+            </div>
+            <div class="author5">
+                Иммануил Кант
+            </div>
+        </div>
+        <div class="citation6">
+            <div class="text6">
+                В моем словаре нет слова «невозможно».
+            </div>
+            <div class="author6">
+                Наполеон Бонапарт
+            </div>
+        </div>
+        <div class="citation7">
+            <div class="text7">
+                Вы никогда не пересечете океан, если не наберетесь мужества потерять берег из виду.
+            </div>
+            <div class="author7">
+                Христофор Колумб
+            </div>
+        </div>
+        <div class="citation8">
+            <div class="text8">
+                Если вы думаете, что на что-то способны, вы правы; если думаете, что у вас ничего не получится - вы тоже правы.
+            </div>
+            <div class="author8">
+                Генри Форд
+            </div>
+        </div>
+        <div class="citation9">
+            <div class="text9">
+                Лучшая месть – огромный успех.
+            </div>
+            <div class="author9">
+                Фрэнк Синатра
+            </div>
+        </div>
+        <div class="citation10">
+            <div class="text10">
+                Есть только один способ избежать критики: ничего не делайте, ничего не говорите и будьте никем.
+            </div>
+            <div class="author10">
+                Аристотель
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
