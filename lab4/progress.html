@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+      main {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family:'Courier New', Courier, monospace;
+    }
+    .container {
+      text-align: center;
+      background: #c896d2;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 10px rgb(110, 44, 148);
+    }
+    .progress-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      width: 300px;
+      height: 30px;
+      background: #ddd;
+      border: 2px solid #e311ea;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6a00ff, #b266ff, violet);
+      transition: none;
+    }
+    .progress-container:active .progress-fill {
+      animation: fill 5s linear forwards;
+    }
+    @keyframes fill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    button {
+      padding: 10px 25px;
+      background: #8e349c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      user-select: none;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    button:hover {
+      box-shadow: 4px 4px 10px rgba(123, 37, 188, 0.599);
+    }
+    .progress-container {
+      display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+        <hr>
+    </header>
+    <main>
+        <div class="container">
+            <div class="progress-title">Степень прогресса</div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <button>Нажмите и удерживайте</button>
+            </div>
+          </div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
