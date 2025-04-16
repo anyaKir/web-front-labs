@@ -22,17 +22,18 @@
              align-items: center;
              flex-wrap: wrap;
          }
-        .tag {
+         .tag {
             position: relative;
             padding: 12px 25px;
             margin: 20px;
             border-radius: 10px;
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            transition: scale 0.4s ease, box-shadow 0.3s ease;
+            animation-play-state: running;
             }
-
         .tag:hover {
-            transform: scale(1.1) rotate(1deg);
+            animation-play-state: paused;
             z-index: 10;
+            scale: 1.2;
             }
         .tag1 {
             font-family: 'Georgia', serif;
@@ -41,14 +42,15 @@
             background: #f3e8e8;
             box-shadow: 12px 12px 6px rgba(182, 86, 182, 0.679);
             transform: rotate(-5deg);
+            animation: float1 8s ease-in-out infinite;
             }
-
         .tag2 {
             font-family: 'Arial Black', Gadget, sans-serif;
             font-size: 28pt;
             color: #3c3c3c;
             box-shadow: 15px 5px 15px rgb(75, 70, 162);
             transform: rotate(-12deg);
+            animation: float2 10s ease-in-out infinite;
             }
         .tag3 {
             font-family: 'Courier New', Courier, monospace;
@@ -59,6 +61,7 @@
             transform: rotate(20deg);
             top: 220px;
             left: 200px;
+            animation: float3 7s ease-in-out infinite;
             }
         .tag4 {
             font-family: 'Trebuchet MS', sans-serif;
@@ -68,6 +71,7 @@
             box-shadow: 12px 11px 4px rgb(141, 11, 155);
             transform: rotate(-18deg);
             top: 250px;
+            animation: float4 6s ease-in-out infinite;
             }
         .tag5 {
             font-family: 'Comic Sans MS', cursive;
@@ -75,6 +79,7 @@
             color: darkmagenta;
             box-shadow: none;
             transform: rotate(-60deg);
+            animation: float5 9s ease-in-out infinite; 
             }
         .tag6 {
             font-family: 'Impact', fantasy;
@@ -84,6 +89,7 @@
             box-shadow: 14px 14px 12px rgb(50, 208, 203);
             transform: rotate(35deg);
             top: 80px;
+            animation: float6 8s ease-in-out infinite;
             }
         .tag7 {
             font-family: 'Verdana', sans-serif;
@@ -93,6 +99,7 @@
             transform: rotate(-85deg);
             top: 350px;
             left: 300px;
+            animation: float7 11s ease-in-out infinite;
             }
         .tag8 {
             font-family: 'Tahoma', sans-serif;
@@ -103,6 +110,7 @@
             transform: rotate(5deg);
             top: 80px;
             left: 100px;
+            animation: float8 7s ease-in-out infinite;
             }
         .tag9 {
             font-family: 'Palatino Linotype', serif;
@@ -112,6 +120,7 @@
             transform: rotate(-12deg);
             top: 320px;
             left: 180px;
+            animation: float9 10s ease-in-out infinite;
             }
         .tag10 {
             font-family: 'Lucida Sans Unicode', sans-serif;
@@ -119,6 +128,7 @@
             color: #111;
             box-shadow: 3px 3px 10px rgb(193, 138, 221);
             top: 60px;
+            animation: float10 9s ease-in-out infinite;
             }
         .tag11 {
             font-family: 'Garamond', serif;
@@ -128,6 +138,7 @@
             box-shadow: 12px 2px 8px rgb(206, 107, 169);
             top: 130px;
             left: 80px;
+            animation: float11 6s ease-in-out infinite;
             }
         .tag12 {
             font-family: 'Brush Script MT', cursive;
@@ -137,6 +148,7 @@
             transform: rotate(-8deg);
             top: -120px;
             left: 70px;
+            animation: float12 8s ease-in-out infinite;
             }
         .tag13 {
             font-family: 'Segoe Print', cursive;
@@ -146,6 +158,7 @@
             transform: rotate(3deg);
             top: -150px;
             right: 30px;
+            animation: float13 7s ease-in-out infinite; 
             }
         .tag14 {
             font-family: 'Helvetica', sans-serif;
@@ -155,6 +168,7 @@
             transform: rotate(1deg);
             top: 40px;
             left: 60px;
+            animation: float14 10s ease-in-out infinite;
             }
         .tag15 {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -164,6 +178,82 @@
             box-shadow: 13px 3px 15px rgba(0, 0, 0, 0.25);
             top: -180px;
             left: 80px;
+            animation: float15 9s ease-in-out infinite;
+            }
+        @keyframes float1 {
+            0%   { transform: translate(0, 0) rotate(-5deg); }
+            50%  { transform: translate(30px, -20px) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(-5deg); }
+            }
+        @keyframes float2 {
+            0%   { transform: translate(0, 0) rotate(-12deg); }
+            50%  { transform: translate(-20px, 15px) rotate(8deg); }
+            100% { transform: translate(0, 0) rotate(-12deg); }
+            }
+        @keyframes float3 {
+            0%   { transform: translate(0, 0) rotate(20deg); }
+            50%  { transform: translate(10px, -30px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(20deg); }
+            }
+        @keyframes float4 {
+            0%   { transform: translate(0, 0) rotate(-18deg); }
+            50%  { transform: translate(-15px, -10px) rotate(15deg); }
+            100% { transform: translate(0, 0) rotate(-18deg); }
+            }
+        @keyframes float5 {
+            0%   { transform: translate(0, 0) rotate(-60deg); }
+            50%  { transform: translate(20px, 20px) rotate(-40deg); }
+            100% { transform: translate(0, 0) rotate(-60deg); }
+            }
+        @keyframes float6 {
+            0%   { transform: translate(0, 0) rotate(35deg); }
+            50%  { transform: translate(-25px, -15px) rotate(45deg); }
+            100% { transform: translate(0, 0) rotate(35deg); }
+            }
+        @keyframes float7 {
+            0%   { transform: translate(0, 0) rotate(-85deg); }
+            50%  { transform: translate(10px, 25px) rotate(-70deg); }
+            100% { transform: translate(0, 0) rotate(-85deg); }
+            }
+        @keyframes float8 {
+            0%   { transform: translate(0, 0) rotate(5deg); }
+            50%  { transform: translate(30px, -15px) rotate(0deg); }
+            100% { transform: translate(0, 0) rotate(5deg); }
+            }
+        @keyframes float9 {
+            0%   { transform: translate(0, 0) rotate(-12deg); }
+            50%  { transform: translate(-30px, 10px) rotate(12deg); }
+            100% { transform: translate(0, 0) rotate(-12deg); }
+            }
+        @keyframes float10 {
+            0%   { transform: translate(0, 0) rotate(0deg); }
+            50%  { transform: translate(20px, 20px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+            }
+        @keyframes float11 {
+            0%   { transform: translate(0, 0) rotate(0deg); }
+            50%  { transform: translate(-15px, -25px) rotate(8deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+            }
+        @keyframes float12 {
+            0%   { transform: translate(0, 0) rotate(-8deg); }
+            50%  { transform: translate(25px, 15px) rotate(6deg); }
+            100% { transform: translate(0, 0) rotate(-8deg); }
+            }
+        @keyframes float13 {
+            0%   { transform: translate(0, 0) rotate(3deg); }
+            50%  { transform: translate(-10px, 20px) rotate(0deg); }
+            100% { transform: translate(0, 0) rotate(3deg); }
+            }
+        @keyframes float14 {
+            0%   { transform: translate(0, 0) rotate(1deg); }
+            50%  { transform: translate(15px, -15px) rotate(-2deg); }
+            100% { transform: translate(0, 0) rotate(1deg); }
+            }
+        @keyframes float15 {
+            0%   { transform: translate(0, 0) rotate(0deg); }
+            50%  { transform: translate(30px, 30px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
             }
      </style>
  </head>
