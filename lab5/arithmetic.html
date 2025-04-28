@@ -14,6 +14,14 @@
                 let result = a + b;
                 alert('Сумма '+ a +' и '+ b +' равна' + result);
             }
+            function showAuthor() {
+                let author = 'Автор страницы: \nКирдячкина Анна Константиновна';
+                alert(author)
+            }
+            function showTeg() {
+                let teg = 'Живи ярко, как красный Ferrari!';
+                alert(teg)
+            }
         </script>
         <style>
             .message {
@@ -29,19 +37,25 @@
                 text-align: center;
                 box-shadow: 15px 10px 25px rgba(213, 213, 67, 0.64);
             }
+            header {
+                cursor: pointer;
+            }
+            footer {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
-        <header>
+        <header onclick="showAuthor()">
             НГТУ, ФБ, Лабораторная работа 5
             <hr>
         </header>
         <main>
             <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-            <div class="message">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
         
         </main>
-        <footer>
+        <footer ondblclick="showTeg()">
             <hr>
             &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
         </footer>
