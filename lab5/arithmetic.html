@@ -24,6 +24,22 @@
                 let teg = 'Живи ярко, как красный Ferrari!';
                 alert(teg)
             }
+            function showPr() {
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+                let c = parseInt(inputC.value);
+                let d = parseInt(inputD.value);
+                let result = c * d;
+                alert('Произведение чисел '+ c +' и '+ d +' равно' + result);
+            }
+            function showRaz() {
+                let inputE = document.getElementById('numberE');
+                let inputF = document.getElementById('numberF');
+                let e = parseInt(inputE.value);
+                let f = parseInt(inputF.value);
+                let result = e - f;
+                alert('Произведение чисел '+ e +' и '+ f +' равна' + result);
+            }
         </script>
         <style>
             .message {
@@ -38,6 +54,10 @@
                 padding: auto;
                 text-align: center;
                 box-shadow: 15px 10px 25px rgba(213, 213, 67, 0.64);
+                margin-top: 20px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+                text-shadow: 20px 50px 70px rgba(122, 207, 228, 0.652);
             }
             header {
                 cursor: pointer;
@@ -55,8 +75,15 @@
         <main>
             <label>Первое число: <input type="number" value="5154" id="numberA"><label><br>
             <label>Второе число: <input type="number" value="7891" id="numberB"><label><br>
+            <label>Первое число: <input type="number" value="2" id="numberC"></label><br>
+            <label>Второе число: <input type="number" value="3" id="numberD"></label><br>
+            <label>Первое число: <input type="number" value="9" id="numberE"></label><br>
+            <label>Второе число: <input type="number" value="2" id="numberF"></label><br>
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showSum()">Найти разность чисел</div>
+            <div class="message" onclick="showPr()">Найти произведение чисел</div>
+            <div class="message" onclick="showRaz()">Найти разность чисел</div>
         </main>
         <footer ondblclick="showTeg()">
             <hr>
