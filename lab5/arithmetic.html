@@ -25,21 +25,88 @@
                 alert(teg)
             }
             function showPr() {
-                let inputC = document.getElementById('numberC');
-                let inputD = document.getElementById('numberD');
-                let c = parseInt(inputC.value);
-                let d = parseInt(inputD.value);
-                let result = c * d;
-                alert('Произведение чисел '+ c +' и '+ d +' равно' + result);
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a * b;
+                alert('Произведение чисел '+ a +' и '+ b +' равно' + result);
             }
             function showRaz() {
-                let inputE = document.getElementById('numberE');
-                let inputF = document.getElementById('numberF');
-                let e = parseInt(inputE.value);
-                let f = parseInt(inputF.value);
-                let result = e - f;
-                alert('Разность чисел '+ e +' и '+ f +' равна' + result);
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a - b;
+                alert('Разность чисел '+ a +' и '+ b +' равна' + result);
             }
+            function showDiv() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                if (b == 0) {
+                    alert('На ноль делить нельзя!!!');
+                    inputB.focus();
+                    inputB.select();
+                    inputB.style.color = 'red';
+                    inputB.style.borderColor = 'red';
+                    return;
+                }
+                if(isNaN(a)) {
+                    alert('Введите числовое значение в первое поле');
+                    inputA.focus();
+                    inputA.select();
+                    inputA.style.color = 'violet';
+                    inputA.style.borderColor = 'violet';
+                    return;
+                }
+                inputB.style.color = '';
+                inputB.style.borderColor = '';
+                inputA.style.color = '';
+                inputA.style.borderColor = '';
+                let result = a/b;
+                alert(a + " / " + b + " = " + result);
+            }
+            function showStep() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let a = parseFloat(inputA.value);
+                let b = parseFloat(inputB.value);
+
+                if (isNaN(a)) {
+                    alert('Введите числовое значение в первое поле');
+                    inputA.focus();
+                    inputA.select();
+                    inputA.style.color = 'violet';
+                    inputA.style.borderColor = 'violet';
+                    return;
+                }
+                if (isNaN(b)) {
+                    alert('Введите числовое значение во второе поле');
+                    inputB.focus();
+                    inputB.select();
+                    inputB.style.color = 'red';
+                    inputB.style.borderColor = 'red';
+                    return;
+                }
+                if (a === 0 && b === 0) {
+                    alert('Ошибка!!!');
+                    inputA.focus();
+                    inputA.select();
+                    inputA.style.color = 'violet';
+                    inputA.style.borderColor = 'violet';
+                    inputB.style.color = 'red';
+                    inputB.style.borderColor = 'red';
+                    return;
+                }
+                inputA.style.color = '';
+                inputA.style.borderColor = '';
+                inputB.style.color = '';
+                inputB.style.borderColor = '';
+                let result = Math.pow(a, b);
+                alert(a + " в степени " + b + " = " + result);
+                }
         </script>
         <style>
             .message {
@@ -73,15 +140,13 @@
         </header>
         <main>
             <label>Первое число: <input type="number" value="5154" id="numberA"><label><br>
-            <label>Второе число: <input type="number" value="7891" id="numberB"><label><br>
-            <label>Первое число: <input type="number" value="2" id="numberC"></label><br>
-            <label>Второе число: <input type="number" value="3" id="numberD"></label><br>
-            <label>Первое число: <input type="number" value="9" id="numberE"></label><br>
-            <label>Второе число: <input type="number" value="2" id="numberF"></label><br>
+            <label>Второе число: <input type="number" value="35" id="numberB"><label><br>
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
             <div class="message" onclick="showRaz()">Найти разность чисел</div>
             <div class="message" onclick="showPr()">Найти произведение чисел</div>
+            <div class="message" onclick="showDiv()">Найти отношение чисел</div>
+            <div class="message" onclick="showStep()">Возвести первое число в степень второго</div>
         </main>
         <footer ondblclick="showTeg()">
             <hr>
