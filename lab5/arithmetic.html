@@ -107,6 +107,15 @@
                 let result = Math.pow(a, b);
                 alert(a + " в степени " + b + " = " + result);
                 }
+                function chahgeOutput(buttonNum, backColor, textColor, bordRad, bordStyle, bordWidth) {
+                    let output = document.getElementById('output');
+                    output.innerHTML = 'Нажата кнопка' + buttonNum;
+                    output.style.backgroundColor = backColor;
+                    output.style.color = textColor;
+                    output.style.borderRadius = bordRad;
+                    output.style.borderStyle = bordStyle;
+                    output.style.borderWidth = bordWidth;
+                }
         </script>
         <style>
             .message {
@@ -131,6 +140,11 @@
             footer {
                 cursor: pointer;
             }
+            #output {
+                border: 1px solid;
+                    width: 300px;
+                    height: 40px;
+            }
         </style>
     </head>
     <body>
@@ -147,6 +161,13 @@
             <div class="message" onclick="showPr()">Найти произведение чисел</div>
             <div class="message" onclick="showDiv()">Найти отношение чисел</div>
             <div class="message" onclick="showStep()">Возвести первое число в степень второго</div>
+            <div>
+                <input type="button" value="Кнопка 1" onclick="chahgeOutput(1, 'yellow', 'blue', '50px', 'dashed', '20px')">
+                <input type="button" value="Кнопка 2" onclick="chahgeOutput(2, 'pink', 'red', '20px', 'inset', '40px')">
+                <input type="button" value="Кнопка 3" onclick="chahgeOutput(3, 'violet', 'green', '30px', 'groove', '40px')">
+                <input type="button" value="Кнопка 4" onclick="chahgeOutput(4, 'orange', 'black', '10px', 'double', '10px')">
+            </div>
+            <div id="output"></div>
         </main>
         <footer ondblclick="showTeg()">
             <hr>
