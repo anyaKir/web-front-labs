@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+        <style>
+            .block {
+                width: 150px;
+                height: 75px;
+                background-color: violet;
+                color: black;
+                text-align: center;
+                font-size: 16px;
+                border: 5px solid black;
+            }
+        </style>
+        <script>
+            function showCoords () {
+                let x = this.event.x;
+                let y = this.event.y;
+                let div = document.getElementById('block');
+
+                if(this.event.ctrlKey)
+                    div.style.color = 'red';
+                else
+                    div.style.color = 'black';
+
+                if (this.event.altKey) {
+                    div.style.backgroundColor = '#ffc0cb'; 
+                    div.style.borderStyle = 'dashed';
+                } else if (this.event.shiftKey) {
+                    div.style.backgroundColor = '#dda0dd'; 
+                    div.style.borderStyle = 'double';
+                } else {
+                    div.style.backgroundColor = 'violet';
+                    div.style.borderStyle = 'solid';
+                }
+
+                let keys = '';
+                if (this.event.ctrlKey)
+                    keys += 'Нажата клавиша Ctrl<br>';
+                if (this.event.altKey)
+                    keys += 'Нажата клавиша Alt<br>';
+                if (this.event.shiftKey)
+                    keys += 'Нажата клавиша Shift<br>';
+
+                let text = '<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px<br>';
+
+                if (this.event.ctrlKey)
+                    text += 'Нажата клавиша Ctrl<br>';
+                if (this.event.altKey)
+                    text += 'Нажата клавиша Alt<br>';
+                if (this.event.shiftKey)
+                    text += 'Нажата клавиша Shift<br>';
+
+                div.innerHTML = text; 
+                }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+        <main>
+           <div id="block" class="block" onmousemove="showCoords()">Наведите курсор</div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
