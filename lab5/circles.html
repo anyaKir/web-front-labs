@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        main {
+            position: relative;
+            height: 80vh;
+        }
+        .circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.8s ease;
+        }
+        .hidden {
+            width: 0 !important;
+            height: 0 !important;
+            opacity: 0 !important;
+        }
+        .show-button {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #c26dc2;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        .show-button:hover {
+            background-color: #a64ca6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+        <hr>
+    </header>
+    <main id="circle-container"></main>
+    <button class="show-button" onclick="showAllCircles()">Показать все круги</button>
+    <footer>
+        <hr>
+        &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+    </footer>
+    <script>
+        const colors = [
+            '#ffb6c1', '#ffc0cb', '#ff69b4', '#ff1493', '#db7093',
+            '#dda0dd', '#ee82ee', '#da70d6', '#ba55d3', '#9932cc'
+        ];
+        const container = document.getElementById('circle-container');
+        const circles = [];
+        for (let i = 1; i <= 10; i++) {
+            const div = document.createElement('div');
+            div.className = 'circle';
+            div.textContent = i;
+            div.style.backgroundColor = colors[i - 1];
+            div.style.left = Math.random() * 90 + '%';
+            div.style.top = Math.random() * 70 + '%';
+            div.addEventListener('click', () => {
+                div.classList.add('hidden');
+            });
+            container.appendChild(div);
+            circles.push(div);
+        }
+        function showAllCircles() {
+            circles.forEach(circle => {
+                circle.classList.remove('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
