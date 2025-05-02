@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+        <style>
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 80vh;
+            }
+            .cart {
+                border: 15px groove rgba(117, 13, 124, 0.549);
+                padding: 30px;
+                background-color: #ea79e441;
+                box-shadow: 5px 5px 15px rgba(181, 46, 222, 0.534);
+                border-radius: 15px;
+                text-align: center;
+                width: 400px;
+            }
+            .cart div {
+                margin-bottom: 15px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: purple;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            button:hover {
+                background-color: rgb(195, 62, 195);
+            }
+            #total {
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            input[type="number"] {
+                width: 200px;
+                padding: 4px;
+                font-size: 16px;
+            }
+        </style>
+          <script>
+            function calculateTotal() {
+                let total = 0;
+                let hasEmpty = false;
+                for (let i = 1; i <= 5; i++) {
+                    const price = parseFloat(document.getElementById('price' + i).textContent);
+                    const input = document.getElementById('qty' + i);
+                    const quantity = parseInt(input.value);
+    
+                    if (isNaN(quantity) || quantity < 0) {
+                        input.style.border = '2px solid red';
+                        hasEmpty = true;
+                    } else {
+                        input.style.border = '';
+                        total += price * quantity;
+                    }
+                }
+                if (hasEmpty) {
+                    alert("Ай-ай-ай, введите не отрицательно значение!!!");
+                }
+                document.getElementById('total').textContent = "Итого: " + total.toFixed(2) + " ₽";
+            }
+            function clearCart() {
+                for (let i = 1; i <= 5; i++) {
+                    const input = document.getElementById('qty' + i);
+                    input.value = 0;
+                    input.style.border = '';
+                }
+                document.getElementById('total').textContent = "Итого: 0 ₽";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+        <main>
+            <div class="cart">
+                <h2>Корзина товаров</h2>
+                <div>
+                    <p>Курица – <span id="price1">299.99</span> ₽</p>
+                    <label>
+                        <input type="number" id="qty1" min="0" value="0" placeholder="Сколько товаров нужно?">
+                    </label>
+                </div>
+                <div>
+                    <p>Творог – <span id="price2">149.50</span> ₽</p>
+                    <label>
+                        <input type="number" id="qty2" min="0" value="0" placeholder="Сколько товаров нужно?">
+                    </label>
+                </div>
+                <div>
+                    <p>Креветки – <span id="price3">499.00</span> ₽</p>
+                    <label>
+                        <input type="number" id="qty3" min="0" value="0" placeholder="Сколько товаров нужно?">
+                    </label>
+                </div>
+                <div>
+                    <p>Йогурт – <span id="price4">89.90</span> ₽</p>
+                    <label>
+                        <input type="number" id="qty4" min="0" value="0" placeholder="Сколько товаров нужно?">
+                    </label>
+                </div>
+                <div>
+                    <p>Помидоры – <span id="price5">249.00</span> ₽</p>
+                    <label>
+                        <input type="number" id="qty5" min="0" value="0" placeholder="Сколько товаров нужно?">
+                    </label>
+                </div>
+                <button onclick="calculateTotal()">Рассчитать стоимость</button>
+                <button onclick="clearCart()">Очистить корзину</button>
+                <h2 id="total">Итого: 0 ₽</h2>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
