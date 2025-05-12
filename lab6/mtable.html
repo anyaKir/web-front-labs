@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Кирдячкина Анна Константиновна. Лабораторная 6</title>
-        <link rel="stylesheet" href="../main.css">
-        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../favicon-32x32.png">
-        <link rel="icon" href="../favicon-16x16.png">
-        <style>
-            main {
+<head>
+    <meta charset="utf-8">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        main {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: calc(100vh - 100px); 
         }
@@ -36,30 +36,84 @@
         div:hover {
             background-color: #b6dff8bc;
         }
-        </style>
-        <script>
-            function showMutipleTable() {
-                let tbl = document.getElementById('mtable');
-                tbl.innerHTML = '<h1>Таблица умножения</h1>';
-                for(i=1; i <=10; i++) {
-                    let s = `<div>${i} * 7 = ${i*7}</div>`;
-                    tbl.innerHTML += s;
-                }
+        form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        input[type="number"] {
+            width: 100px;
+            height: 30px;
+            padding-left: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #4c6eff;
+            color: white;
+            border: none;
+            outline: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+     <script>
+        function showMultipleTable(multiplyBy = 7, start = 1, end = 10) {
+            const tbl = document.getElementById('mtable');
+            tbl.innerHTML = `<h1>Таблица умножения на ${multiplyBy}</h1>`;
+
+            if (start > end) {
+                tbl.innerHTML += `<div>Ошибка: начальное значение больше конечного!</div>`;
+                return;
             }
-            showMutipleTable();
-        </script>
-    </head>
-    <body onload="showMutipleTable()">
-        <header>
-            НГТУ, ФБ, Лабораторная работа 6
-            <hr>
-        </header>
-        <main>
-            <div id="mtable"></div>
-        </main>
-        <footer>
-            <hr>
-            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
-        </footer>
-    </body>
+
+            for (let i = start; i <= end; i++) {
+                const s = `<div>${i} * ${multiplyBy} = ${i * multiplyBy}</div>`;
+                tbl.innerHTML += s;
+            }
+        }
+        function updateTable(e) {
+            e.preventDefault();
+            const multiplyBy = parseInt(document.getElementById("multiplyBy").value);
+            const startFrom = parseInt(document.getElementById("startFrom").value);
+            const endAt = parseInt(document.getElementById("endAt").value);
+
+            if (isNaN(multiplyBy) || isNaN(startFrom) ||  isNaN(endAt)) {
+                alert("Пожалуйста, заполните все поля корректно.");
+                return;
+            }
+            showMultipleTable(multiplyBy, startFrom, endAt);
+        }
+        window.onload = function () {
+            showMultipleTable();
+        };
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+    <main>
+        <div id="mtable"></div>
+        <form onsubmit="updateTable(event)">
+            Умножить на: <input type="number" id="multiplyBy" value="7">
+            Начать с: <input type="number" id="startFrom" value="1">
+            Закончить на: <input type="number" id="endAt" value="10">
+            <button type="submit">Результат</button>
+        </form>
+    </main>
+    <footer>
+        <hr>
+        &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
 </html>
