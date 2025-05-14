@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <style>
+        #diag {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            padding: 20px;
+            height: 300px; 
+            border: 1px solid #ccc;
+        }
+
+        .bar {
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+    <script>
+        function showDiagram() {
+            let data = [32, 65, 89, 25, 3, 54, 36, 41, 20, 54];
+            let colors = ['pink', 'violet', 'purple', 'blue', 'yellow', 'orange', 'black', 'green', 'lightblue', 'pink'];
+            let bars = document.getElementsByClassName('bar');
+            const diagHeight = document.getElementById('diag').clientHeight;
+            const maxData = Math.max(...data);
+            const k = diagHeight / maxData * 0.9;
+
+            for (let i = 0; i < data.length; i++) {
+                bars[i].style.height = (k * data[i]) + 'px';
+                bars[i].style.backgroundColor = colors[i];
+                bars[i].textContent = data[i];
+            }
+        }
+    </script>
+</head>
+<body onload="showDiagram()">
+<header>
+    НГТУ, ФБ, Лабораторная работа 6
+    <hr>
+</header>
+<main>
+    <div id="diag">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</main>
+<footer>
+    <hr>
+    &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+</footer>
+</body>
+</html>
