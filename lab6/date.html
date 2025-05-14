@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        .date-block {
+            background-color: #e0c7f0;
+            border-left: 5px solid #aa21f3;
+            margin: 15px 30px;
+            padding: 15px 20px;
+            box-shadow: 0 0 10px rgba(81, 76, 2, 0.793);
+            border-radius: 8px;
+        }
+        .locale {
+            font-weight: bold;
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        .datetime {
+            font-size: 20px;
+            color: #222;
+        }
+        h1 {
+            margin-left: 30px;
+        }
+    </style>
+    <script>
+        function showDate() {
+            const now = new Date();
+            const locales = [
+                { code: 'ru-RU', label: 'Россия (ru-RU)' },
+                { code: 'en-US', label: 'США (en-US)' },
+                { code: 'ja-JP', label: 'Япония (ja-JP)' },
+                { code: 'fr-FR', label: 'Франция (fr-FR)' },
+                { code: 'hi-IN', label: 'Индия (hi-IN)' }
+            ];
+
+            const container = document.getElementById('current-date');
+            locales.forEach(loc => {
+                const block = document.createElement('div');
+                block.className = 'date-block';
+                block.innerHTML = `
+                    <div class="locale">${loc.label}</div>
+                    <div class="datetime">${now.toLocaleString(loc.code)}</div>
+                `;
+                container.appendChild(block);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", showDate);
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+    <main>
+        <h1>Текущее время и дата в разных странах:</h1>
+        <div id="current-date"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
