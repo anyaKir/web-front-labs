@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кирдячкина Анна Константиновна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script src="books.js"></script>
+    <style>
+        #bookList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .book {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 250px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 8px rgba(106, 8, 121, 0.971);
+            position: relative;
+        }
+        .bestseller {
+            border: 2px solid gold;
+            background-color: #fffbe6;
+        }
+        .unavailable {
+            opacity: 0.5;
+            position: relative;
+        }
+        .unavailable::after {
+            content: "Нет в наличии";
+            color: red;
+            position: absolute;
+            bottom: 8px;
+            left: 12px;
+            font-size: 12px;
+        }
+        .book h3 {
+            margin: 0 0 6px;
+        }
+        .book p {
+            margin: 4px 0;
+        }
+        .book-title {
+            font-weight: normal;
+            color: violet;
+            transition: 0.3s;
+        }
+        .bestseller .book-title {
+            font-weight: bold;
+            color: rgb(55, 24, 109);
+            text-decoration: underline dotted;
+            cursor: help;
+        }
+    </style>
+    <script>
+        function showBooks() {
+            const bookList = document.getElementById('bookList');
+            books.forEach(book => {
+                const bookDiv = document.createElement('div');
+                bookDiv.classList.add('book');
+                if (book.bestseller) bookDiv.classList.add('bestseller');
+                if (!book.available) bookDiv.classList.add('unavailable');
+
+                bookDiv.innerHTML = `
+                    <h3>
+                        <span class="book-title" ${book.bestseller ? 'title="Бестселлер"' : ''}>
+                            ${book.name}
+                        </span>
+                        </h3>
+                    <p><strong>Автор:</strong> ${book.author}</p>
+                    <p><strong>Год издания:</strong> ${book.publicationYear}</p>
+                    <p><strong>Цена:</strong> ${book.price} ₽</p>
+                `;
+                bookList.appendChild(bookDiv);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", showBooks);
+    </script>
+</head>
+<body>
+<header>
+    НГТУ, ФБ, Лабораторная работа 6
+    <hr>
+</header>
+<main>
+    <h1>Список книг</h1>
+    <div id="bookList"></div>
+</main>
+<footer>
+    <hr>
+    &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+</footer>
+</body>
+</html>
