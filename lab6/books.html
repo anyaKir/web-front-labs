@@ -65,7 +65,6 @@
                 bookDiv.classList.add('book');
                 if (book.bestseller) bookDiv.classList.add('bestseller');
                 if (!book.available) bookDiv.classList.add('unavailable');
-
                 bookDiv.innerHTML = `
                     <h3>
                         <span class="book-title" ${book.bestseller ? 'title="Бестселлер"' : ''}>

@@ -79,4 +79,5 @@ const books = [
         bestseller: false,
         available: true
     }
+    
 ];
