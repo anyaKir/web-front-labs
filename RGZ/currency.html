@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Главная | АКБ Приморье</title>
+    <link rel="stylesheet" href="../main-rgz.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .converter {
+      background: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .converter input {
+      padding: 8px;
+      width: 120px;
+      margin: 5px;
+    }
+    .converter select {
+      padding: 8px;
+    }
+    #chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .highlight {
+      background: #ffdd57;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div id="burger">&#9776;</div>
+  <div><b>АКБ Приморье</b></div>
+</header>
+
+<nav id="menu">
+  <a href="index.html">Главная</a>
+  <a href="about.html">О компании</a>
+  <a href="news.html">Новости</a>
+  <a href="currency.html">Курс валют</a>
+  <a href="contacts.html">Контактные данные</a>
+  <a href="video.html">Видео</a>
+</nav>
+
+<main class="fade-in">
+  <h1>Курс валют: RUB ↔ BYN</h1>
+
+  <div class="converter">
+    <p>Текущий курс BYN по данным ЦБ РФ: <b id="rate">загрузка...</b></p>
+    <input type="number" id="rub" placeholder="₽" oninput="convert('rub')">
+    <span>⇄</span>
+    <input type="number" id="byn" placeholder="Br" oninput="convert('byn')">
+  </div>
+
+  <div id="chart-container">
+    <h2>Курс BYN за последний месяц</h2>
+    <canvas id="rateChart" height="120"></canvas>
+    <div id="dayInfo" class="highlight" style="display: none;"></div>
+  </div>
+</main>
+
+<button class="top-button" onclick="scrollToTop()">Наверх ↑</button>
+
+<script>
+  document.getElementById('burger').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  let currentRate = 0;
+
+  // Получаем текущий курс BYN
+  fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+    .then(res => res.json())
+    .then(data => {
+      currentRate = data.Valute.BYN.Value;
+      document.getElementById('rate').textContent = currentRate.toFixed(4);
+    });
+
+  function convert(from) {
+    const rub = document.getElementById('rub');
+    const byn = document.getElementById('byn');
+    if (!currentRate) return;
+
+    if (from === 'rub') {
+      byn.value = (parseFloat(rub.value) / currentRate).toFixed(2);
+    } else {
+      rub.value = (parseFloat(byn.value) * currentRate).toFixed(2);
+    }
+  }
+
+  // Генерация фейковых данных за 30 дней
+  const labels = [];
+  const data = [];
+  const today = new Date();
+  for (let i = 29; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    const formatted = date.toISOString().split('T')[0];
+    labels.push(formatted);
+    const randomRate = (3 + Math.random() * 0.1).toFixed(4);
+    data.push(parseFloat(randomRate));
+  }
+
+  const ctx = document.getElementById('rateChart').getContext('2d');
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'BYN/RUB',
+        data: data,
+        backgroundColor: '#004787'
+      }]
+    },
+    options: {
+      onClick: (e, elements) => {
+        if (elements.length > 0) {
+          const i = elements[0].index;
+          const date = labels[i];
+          const value = data[i];
+          const info = document.getElementById('dayInfo');
+          info.style.display = 'block';
+          info.textContent =` Курс на ${date}: ${value} BYN`;
+        }
+      },
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: { beginAtZero: false }
+      }
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Главная | АКБ Приморье</title>
+    <link rel="stylesheet" href="../main-rgz.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+</head>
+<body>
+  <header>
+    <div id="burger">&#9776;</div>
+    <div><b>АКБ Приморье</b></div>
+  </header>
+  <nav id="menu">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О компании</a>
+    <a href="news.html">Новости</a>
+    <a href="currency.html">Курс валют</a>
+    <a href="contacts.html">Контактные данные</a>
+    <a href="video.html">Видео</a>
+  </nav>
+  <main class="fade-in">
+    <h1>Добро пожаловать в АКБ Приморье</h1>
+    <p>АКБ Приморье — ведущий банк Приморского края с более чем 25-летней историей.</p>
+    <p>Наша цель — быть надёжным партнёром в финансовых вопросах для бизнеса и населения.</p>
+  </main>
+  <button class="top-button" onclick="scrollToTop()">Наверх ↑</button>
+  <script>
+    document.getElementById('burger').addEventListener('click', function () {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
