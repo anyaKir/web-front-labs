@@ -61,10 +61,17 @@ main {
     max-width: 1000px;
     margin: auto;
 }
-h1, h2 {
+h1 {
     color: #444;
     border-left: 5px solid #d4af37;
     padding-left: 10px;
+    font-size: 40px;
+}
+h2 {
+    color: #444;
+    border-left: 5px solid #d4af37;
+    padding-left: 10PX;
+    font-size: 24px;
 }
 .top-button {
     position: fixed;
