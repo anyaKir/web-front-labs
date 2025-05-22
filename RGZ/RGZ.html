@@ -1,39 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Главная | АКБ Приморье</title>
-    <link rel="stylesheet" href="../main-rgz.css">
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <title>Главная | АКБ Приморье</title>
+  <link rel="stylesheet" href="main-rgz.css">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon-32x32.png">
     <link rel="icon" href="favicon-16x16.png">
+  <style>
+        .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        }
+        .feature {
+        background: white;
+        border-left: 5px solid #d4af37;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        }
+        .feature:hover {
+        transform: translateY(-5px);
+        }
+        .feature img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: contain;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        }
+        .feature h3 {
+        color: #333;
+        margin-bottom: 10px;
+        }
+        h1.ani {
+                font-size: 3em;
+                color: transparent;
+                text-shadow: none;
+                background-image: linear-gradient(to right, gold, silver);
+                background-clip: text;
+                animation: shine 7s ease-in-out infinite alternate;
+            }
+
+        @keyframes shine {
+            from {background-position: 0%;}
+            to {background-position: 100%;}
+        }
+  </style>
 </head>
 <body>
   <header>
     <div id="burger">&#9776;</div>
     <div><b>Банк "Приморье"</b></div>
   </header>
+
   <nav id="menu">
-    <a href="index.html">Главная</a>
+    <a href="RGZ.html">Главная</a>
     <a href="news.html">Новости</a>
     <a href="currency.html">Курс валют</a>
     <a href="contacts.html">Контактные данные</a>
     <a href="video.html">Видео</a>
   </nav>
+
   <main class="fade-in">
-    <h1>Добро пожаловать в АКБ Приморье</h1>
-    <p>АКБ Приморье — ведущий банк Приморского края с более чем 25-летней историей.</p>
+    <h1 class="ani">Добро пожаловать в АКБ Приморье</h1>
+    <p>АКБ Приморье — ведущий банк Приморского края с более чем <b><u>25-летней историей.</u></b></p>
     <p>Наша цель — быть надёжным партнёром в финансовых вопросах для бизнеса и населения.</p>
+    <div class="features">
+      <div class="feature">
+        <img src="кэшбэк.PNG" alt="Кэшбэк">
+        <h3>Полезный кэшбэк</h3>
+        <p>Получайте до 10% возврата за покупки в супермаркетах, АЗС и онлайн-магазинах.</p>
+      </div>
+      <div class="feature">
+        <img src="слитки.PNG" alt="Золото в слитках">
+        <h3>Золото в слитках</h3>
+        <p>Надёжные инвестиции в драгоценные металлы — от слитков до монет.</p>
+      </div>
+      <div class="feature">
+        <img src="вклады.PNG" alt="Вклады">
+        <h3>Вклады</h3>
+        <p>Высокие проценты по вкладам, удобные сроки и надёжная защита ваших сбережений.</p>
+      </div>
+      <div class="feature">
+        <img src="фин бп.PNG" alt="Финансовая безопасность">
+        <h3>Финансовая безопасность</h3>
+        <p>Современные технологии защиты, страхование вкладов и защита ваших данных.</p>
+      </div>
+    </div>
+
+    <main class="fade-in">
+  <h1>Банк «Приморье» — если нужен <br>
+      индивидуальный подход</h1>
+  <h2>Банк «Приморье» — это команда финансовых экспертов</h2>
+  <p><i>Мы работаем для успешного решения самых разных задач клиентов: от предоставления стандартных банковских услуг <br>
+    до реализации уникальных бизнес-кейсов, не имеющих аналогов на финансовом рынке.</i></p>
+  <h2>Наше преимущество — индивидуальный подход и гибкость</h2>
+  <p><i>Основываясь на 30-летнем опыте, высоком уровне профессионализма и учитывая нашу заинтересованность<br>
+    в удовлетворении потребностей каждого клиента, мы способны находить нестандартные решения и предлагать <br>
+    эксклюзивные варианты финансового сопровождения.</i></p>
+  <h2>Банк «Приморье» — больше, чем просто банк</h2>
+  <p><i>Мы — Ваш финансовый и бизнес-партнер. Мы не работаем по алгоритмам — мы решаем Ваши задачи.</i></p>
+  <h2><b>Бесплатный мобильный банк «Приморье»</b></h2>
+    <ul>
+      <li>Переводы по номеру телефона в любой банк без комисии (Система быстрых платежей)</li>
+      <li>Оплата квитанции ЖКХ по QR-коду</li>
+      <li>Оплата штрафов ГИБДД</li>
+      <li>Обмен валюты</li>
+      <li>Переводы на счета и карты</li>
+      <li>Открытие/закрытие вкладов</li>
+      <li>Выпуск, перевыпуск карт</li>
+      <li>Заявка на кредит, кредитную карту, рефинансирование, ипотеку</li>
+    </ul>
+    <h1>История банка</h1>
+    <p>История Банка <b>«Приморье»</b> началась <u>27 июля 1994</u> во Владивостоке, где в историческом здании Штаба Тихоокеанского флота было открыто первое отделение Банка.<br>
+        На данный момент Банк «Приморье» представлен в шести регионах Российской Федерации и охватывает сразу <i>9 городов – Москва, Санкт-Петербург, Иркутск, Южно-Сахалинск, Хабаровск, Находка, Уссурийск, Артем и Владивосток.</i><br>
+        Банк «Приморье» сегодня — это крупный региональный банк, который представляет широкий спектр услуг, как для частных,<br>
+        так и корпоративных клиентов. Одним из ключевых направлений для Банка является сервис для обслуживания юридических лиц, 
+        а именно сопровождение операций внешнеэкономической деятельности, расчетно-кассовое обслуживание и зарплатные проекты.<br>
+        Для частных клиентов доступен широкий спектр услуг и продуктов: пластиковые карты с различными программами лояльности<br>
+        <i>(кешбэк и накопление миль)</i>, выгодные вклады, кредитные продукты на любые цели,ипотека по государственным программам.<br>
+        Также клиенты выбирают Банк для совершения SWIFT-переводов в 9 доступных мировых валютах, которые можно обменять<br>
+        по выгодному курсу в офисах Банка и мобильном приложении.<br>
+        <b>Главная цель Банка «Приморье» - двигаться вперед, достигая новых высот; становиться лучше с каждым днем и радовать клиентов превосходным сервисом и выгодными предложениями.</b><br>
+        Банк «Приморье» выражает благодарность действующим клиентам Банка за лояльность и преданность, а новым клиентам за выбор и доверие.
+        С подробной информацией о режиме работе офисов Банка «Приморье», продуктах и услугах для клиентов<br>
+        можно ознакомиться на сайте Банка или по телефону единого контакт-центра <u>8 (800) 200-20-86</u></p>
+    </main>
   </main>
-  <button class="top-button" onclick="scrollToTop()">Наверх ↑</button>
-  <script>
-    document.getElementById('burger').addEventListener('click', function () {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    });
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+<button class="top-button" onclick="scrollToTop()">Наверх ↑</button>
+<script>
+  document.getElementById('burger').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
