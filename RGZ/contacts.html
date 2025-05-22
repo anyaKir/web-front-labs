@@ -2,70 +2,157 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Главная | АКБ Приморье</title>
+    <title>Контактные данные | АКБ Приморье</title>
     <link rel="stylesheet" href="main-rgz.css">
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon-32x32.png">
     <link rel="icon" href="favicon-16x16.png">
-  <style>
-    .contact-info {
-      background: white;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-  </style>
+    <style>
+        .contact-info {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #map {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 <header>
-  <div id="burger">&#9776;</div>
-  <div><b>Банк "Приморье"</b></div>
+    <div id="burger">&#9776;</div>
+    <div><b>Банк "Приморье"</b></div>
 </header>
 
 <nav id="menu">
-  <a href="index.html">Главная</a>
-  <a href="news.html">Новости</a>
-  <a href="currency.html">Курс валют</a>
-  <a href="contacts.html">Контактные данные</a>
-  <a href="video.html">Видео</a>
+    <a href="index.html">Главная</a>
+    <a href="news.html">Новости</a>
+    <a href="currency.html">Курс валют</a>
+    <a href="contacts.html">Контактные данные</a>
+    <a href="video.html">Видео</a>
 </nav>
 
 <main class="fade-in">
-  <h1>Контактные данные</h1>
+    <h1>Контактные данные</h1>
 
-  <div class="contact-info">
-    <p><b>Головной офис:</b></p>
-    <p>690091, г. Владивосток, ул. Светланская, 45</p>
-    <p><b>Телефон:</b> 8 (800) 100-54-34</p>
-    <p><b>Email:</b> info@primbank.ru</p>
-    <p><b>Время работы:</b> Пн–Пт с 9:00 до 18:00</p>
-  </div>
+    <div class="contact-info">
+        <p><b>Телефон:</b> <u>8 800 200 20 86</u></p>
 
-  <h2>Мы на карте</h2>
-  <iframe
-    src="https://yandex.ru/map-widget/v1/?um=constructor%3Adaf8bdb9c2b3cb1f2f2c182d6bb1b4ac6145e70f13fdbd4c9a1a2279c7dc30fb&amp;source=constructor"
-    allowfullscreen>
-  </iframe>
+        <h3>МОСКВА</h3>
+        <ul>
+            <li>ул. Земляной Вал, 7 (м. Курская)</li>
+            <li>ул. Усачева, 35, стр. 1 (м. Спортивная)</li>
+            <li>Новинский бульвар, 12 (м. Смоленская)</li>
+        </ul>
+
+        <h3>САНКТ-ПЕТЕРБУРГ</h3>
+        <ul>
+            <li>пр-т Добролюбова, 8, лит. А (м. Спортивная)</li>
+        </ul>
+
+        <h3>НОВОСИБИРСК</h3>
+        <ul>
+            <li>Вокзальная магистраль, 16</li>
+        </ul>
+
+        <h3>ИРКУТСК</h3>
+        <ul>
+            <li>ул. Дзержинского, 20/1</li>
+        </ul>
+
+        <h3>ХАБАРОВСК</h3>
+        <ul>
+            <li>ул. Ленина, 75</li>
+        </ul>
+
+        <h3>ЮЖНО-САХАЛИНСК</h3>
+        <ul>
+            <li>ул. Амурская, 88</li>
+        </ul>
+
+        <h3>ВЛАДИВОСТОК</h3>
+        <ul>
+            <li>ул. Светланская, 47</li>
+            <li>ул. Русская, 65/4</li>
+            <li>ул. Калинина, 275</li>
+            <li>Народный проспект, 43/2</li>
+        </ul>
+
+        <h3>АРТЕМ</h3>
+        <ul>
+            <li>ул. Кирова, 53</li>
+            <li>Муравьиная бухта, 73 (офис в казино «Tigre de Cristal»)</li>
+        </ul>
+
+        <h3>УССУРИЙСК</h3>
+        <ul>
+            <li>ул. Ушакова, 20</li>
+            <li>ул. Комсомольская, 83</li>
+        </ul>
+
+        <h3>НАХОДКА</h3>
+        <ul>
+            <li>ул. Школьная, 1а</li>
+            <li>пос. Врангель, пр. Восточный, 4</li>
+        </ul>
+    </div>
+    <h2>Мы на карте</h2>
+    <div id="map"></div>
 </main>
 
 <button class="top-button" onclick="scrollToTop()">Наверх ↑</button>
 
 <script>
-  document.getElementById('burger').addEventListener('click', function () {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  });
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    document.getElementById('burger').addEventListener('click', function () {
+        const menu = document.getElementById('menu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    ymaps.ready(init);
+    function init(){
+        var map = new ymaps.Map("map", {
+            center: [55.7558, 37.6176], // Центр карты - Москва
+            zoom: 4
+        });
+
+        var locations = [
+            { coords: [55.7575, 37.6617], name: 'Москва, ул. Земляной Вал, 7' },
+            { coords: [55.7241, 37.5661], name: 'Москва, ул. Усачева, 35, стр. 1' },
+            { coords: [55.7520, 37.5865], name: 'Москва, Новинский бульвар, 12' },
+            { coords: [59.9460, 30.2905], name: 'Санкт-Петербург, пр-т Добролюбова, 8, лит. А' },
+            { coords: [55.0415, 82.9346], name: 'Новосибирск, Вокзальная магистраль, 16' },
+            { coords: [52.2833, 104.2807], name: 'Иркутск, ул. Дзержинского, 20/1' },
+            { coords: [48.4814, 135.0710], name: 'Хабаровск, ул. Ленина, 75' },
+            { coords: [46.9541, 142.7380], name: 'Южно-Сахалинск, ул. Амурская, 88' },
+            { coords: [43.1165, 131.8820], name: 'Владивосток, ул. Светланская, 47' },
+            { coords: [43.1155, 131.9114], name: 'Владивосток, ул. Русская, 65/4' },
+            { coords: [43.1300, 131.9110], name: 'Владивосток, ул. Калинина, 275' },
+            { coords: [43.1305, 131.9115], name: 'Владивосток, Народный проспект, 43/2' },
+            { coords: [43.3500, 132.1833], name: 'Артем, ул. Кирова, 53' },
+            { coords: [43.3505, 132.1840], name: 'Артем, Муравьиная бухта, 73 (Tigre de Cristal)' },
+            { coords: [43.8000, 131.9500], name: 'Уссурийск, ул. Ушакова, 20' },
+            { coords: [43.8010, 131.9510], name: 'Уссурийск, ул. Комсомольская, 83' },
+            { coords: [42.8167, 132.8833], name: 'Находка, ул. Школьная, 1а' },
+            { coords: [42.8170, 132.8840], name: 'Находка, пос. Врангель, пр. Восточный, 4' }
+        ];
+
+        locations.forEach(function(loc) {
+            map.geoObjects.add(new ymaps.Placemark(loc.coords, {
+                balloonContent: loc.name
+            }));
+        });
+    }
 </script>
 </body>
 </html>
