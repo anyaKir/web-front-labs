@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Главная | АКБ Приморье</title>
     <link rel="stylesheet" href="main-rgz.css">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../favicon-32x32.png">
-    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     .converter {
@@ -14,7 +14,7 @@
       padding: 20px;
       margin-bottom: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(10,10,10,10.10);
     }
     .converter input {
       padding: 8px;
@@ -43,7 +43,6 @@
     <div id="burger">&#9776;</div>
     <div><b>Банк "Приморье"</b></div>
 </header>
-
 <nav id="menu">
   <a href="index.html">Главная</a>
   <a href="news.html">Новости</a>
@@ -53,7 +52,7 @@
 </nav>
 
 <main class="fade-in">
-  <h1>Курс валют: RUB ↔ BYN</h1>
+  <h1>Курс валют: Российский рубль (RUB) ↔ Белорусский рубль (BYN) </h1>
 
   <div class="converter">
     <p>Текущий курс BYN по данным ЦБ РФ: <b id="rate">загрузка...</b></p>
@@ -83,7 +82,6 @@
 
   let currentRate = 0;
 
-  // Получаем текущий курс BYN
   fetch('https://www.cbr-xml-daily.ru/daily_json.js')
     .then(res => res.json())
     .then(data => {
@@ -103,7 +101,6 @@
     }
   }
 
-  // Генерация фейковых данных за 30 дней
   const labels = [];
   const data = [];
   const today = new Date();
@@ -124,7 +121,7 @@
       datasets: [{
         label: 'BYN/RUB',
         data: data,
-        backgroundColor: '#004787'
+        backgroundColor: '#D3AF37'
       }]
     },
     options: {
