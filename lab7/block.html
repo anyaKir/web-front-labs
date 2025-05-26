@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+        <style>
+        .new-block {
+            background-color: violet;
+            height: 40px;
+            width: 200px;
+            border: 2px solid black;
+            margin: 10px 0; 
+            border-radius: 5px;
+        }
+        </style>
+        <script>
+            function addNewBlock() {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'violet';
+                newBlock.style.height = '40px';
+                newBlock.className = 'new-block';
+                document.querySelector('main').appendChild(newBlock);
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+        </header>
+        <main>
+            <button onclick="addNewBlock()">Добавить блок</button>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
