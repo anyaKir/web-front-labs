@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+         <style>
+        #exchange-button {
+            background-color: #6c2a9b; 
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        #exchange-button:hover {
+            background-color: #7852b1;
+        }
+    </style>
+        <script src="dollar-data.js"></script>
+        <script>
+            function showExchange() {
+               // const exchange = [
+                 //   80.8883, 80.5500, 80.2237, 80.3134, 80.7689, 80.4137, 80.3075, 79.7530,	79.7357, 79.7108
+                //];
+            let table = document.getElementById('dollar-table');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            
+            document.getElementById('detail').innerText = 'Среднее значение курса: ' + average;
+
+            document.getElementById('exchange-button').remove();
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+        </header>
+         <main>
+            <button id="exchange-button" onclick="showExchange()">Показать курс</button>
+            <table border="1" id="dollar-table"></table>
+            <div id="detail"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
