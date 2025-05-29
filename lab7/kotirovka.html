@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+        <style>
+            table {
+                margin-top: 20px;
+                border-collapse: collapse;
+                width: 100%;
+                max-width: 600px;
+                }
+            th, td {
+                border: 1px solid #340344;
+                padding: 8px;
+                text-align: center;
+                }
+            .green {
+                color: green;
+                }
+            .red {
+                color: red;
+                }
+            .black {
+                color: black;
+                }
+            .button {
+                background-color: rgb(234, 199, 242);
+                color: #340344;
+                padding: 12px 24px;
+                border: 2px solid rgb(104, 22, 142);
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 16px;
+                margin: 20px 0;
+            }
+        </style>
+        <script>
+            const dates = [
+            '2025-05-29', '2025-05-28', '2025-05-27', '2025-05-26', '2025-05-25',
+            '2025-05-24', '2025-05-23', '2025-05-22', '2025-05-21', '2025-05-20'
+        ];
+            const prices = [
+            1437.50, 1430.50, 1435.50, 1460.50, 1461.50,
+            1472.00, 1478.00, 1502.00, 1473.00
+        ];
+
+            function showTable() {
+                const container = document.getElementById('tableContainer');
+                let tableHTML = '<table>';
+                tableHTML += '<tr><th>Дата</th><th>Цена акций</th><th>Разница</th></tr>';
+
+                let sum = 0;
+                let max = prices[0];
+                let min = prices[0];
+
+            for (let i = 0; i < prices.length; i++) {
+                const price = prices[i];
+                const date = dates[i];
+                sum += price;
+                if (price > max) max = price;
+                if (price < min) min = price;
+
+            let diffCell = '<td>-</td>';
+            if (i > 0) {
+                const diff = price - prices[i - 1];
+                let className = 'black';
+                if (diff > 0) className = 'green';
+                else if (diff < 0) className = 'red';
+
+                diffCell = `<td class="${className}">${diff.toFixed(2)}</td>`;
+            }
+
+            tableHTML += `<tr><td>${date}</td><td>${price.toFixed(2)}</td>${diffCell}</tr>`;
+            }
+
+            const avg = (sum / prices.length).toFixed(2);
+
+            tableHTML += '</table>';
+            tableHTML += `<p><strong>Средняя стоимость акции:</strong> ${avg}</p>`;
+            tableHTML += `<p><strong>Максимальная стоимость акции:</strong> ${max.toFixed(2)}</p>`;
+            tableHTML += `<p><strong>Минимальная стоимость акции:</strong> ${min.toFixed(2)}</p>`;
+
+            container.innerHTML = tableHTML;
+        }
+</script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+        </header>
+        <main>
+             <button class="button" onclick="showTable()">Курс акций Лента</button>
+            <div id="tableContainer"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
