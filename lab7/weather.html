@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Кирдячкина Анна Константиновна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-16x16.png">
+        <style>
+            .weather-box {
+                border: 2px solid #3478c2;
+                background-color: #e6f0fa;
+                border-radius: 10px;
+                padding: 20px;
+                max-width: 400px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            h2 {
+                color: #3478c2;
+            }
+            p {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+            .button {
+                background-color: #a9d4ff;
+                color: #003366;
+                border: 2px solid #3478c2;
+                padding: 12px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+        }
+    </style>
+        <script>
+        function getWeather() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const times = data.hourly.time;
+                    const temps = data.hourly.temperature_2m;
+
+                    const today = new Date().toISOString().split('T')[0];
+
+                    const targetHours = ["08:00", "12:00", "20:00"];
+                    let resultHTML = `<h2>Температура в Новосибирске</h2>`;
+
+                    targetHours.forEach(hour => {
+                        const timeStr = `${today}T${hour}`;
+                        const index = times.indexOf(timeStr);
+                        if (index !== -1) {
+                            const temp = temps[index];
+                            resultHTML += `<p><strong>${hour}:</strong> ${temp} °C</p>`;
+                        } else {
+                            resultHTML += `<p><strong>${hour}:</strong> Данные недоступны</p>`;
+                        }
+                    });
+
+                    const weatherDiv = document.getElementById("weather");
+                    weatherDiv.innerHTML = resultHTML;
+                    weatherDiv.style.display = "block";
+                })
+                .catch(error => {
+                    console.error("Ошибка при загрузке данных:", error);
+                    alert("Ошибка загрузки погоды.");
+                });
+        }
+    </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+        </header>
+        <main>
+            <button class="button" onclick="getWeather()">Показать температуру на сегодня</button>
+            <div id="weather" class="weather-box" style="display: none;"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Анна Кирдячкина, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
